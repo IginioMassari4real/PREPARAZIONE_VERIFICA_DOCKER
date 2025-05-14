@@ -3,13 +3,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `<div>{{ message }}</div>`,
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   message = '';
 
   constructor(private http: HttpClient) {
-    this.http.get<any>('https://5000-iginiomassa-preparazion-aota57b5mov.ws-eu118.gitpod.io/api/data').subscribe(data => {
+    this.http.get<any>('https://5000-iginiomassa-preparazion-m4eoz4k2fz7.ws-eu118.gitpod.io/api/data').subscribe(data => {
       this.message = data.message;
     });
   }
